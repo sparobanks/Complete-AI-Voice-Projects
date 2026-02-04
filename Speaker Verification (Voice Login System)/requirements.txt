@@ -1,1 +1,17 @@
+fastapi
+uvicorn[standard]
+python-multipart
+pydantic
+
+streamlit
+requests
+streamlit-audiorecorder
+
+torch
+torchaudio
+
+speechbrain
+
+numpy<2
+soundfile
 
