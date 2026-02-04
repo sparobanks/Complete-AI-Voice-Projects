@@ -1,0 +1,22 @@
+# --- Core backend ---
+fastapi
+uvicorn[standard]
+python-multipart
+pydantic
+
+# --- Frontend ---
+streamlit
+requests
+streamlit-audiorecorder
+
+# --- Audio processing ---
+soundfile
+pydub
+ffmpeg-python
+numpy
+
+# --- Speech recognition (NO Whisper dependency hell) ---
+faster-whisper
+
+# --- Optional but recommended ---
+tqdm
