@@ -102,34 +102,34 @@ You must:
 
 ## SETUP & RUN
 
-Create environment
-
+**Create environment**
+```text
 conda create -n voice_lab python=3.10 -y  
 conda activate voice_lab  
-
-Install dependencies
-
+```
+**Install dependencies**
+```text
 pip install -r requirements.txt  
-
-Set Hugging Face token (required)
-
+```
+**Set Hugging Face token (required)**
+```text
 export HF_TOKEN="YOUR_HF_TOKEN_HERE"  
-
-Start FastAPI backend (port 8005)
-
+```
+**Start FastAPI backend (port 8005)**
+```text
 export KMP_DUPLICATE_LIB_OK=TRUE  
 python -m uvicorn api.main:app --host 127.0.0.1 --port 8005  
-
-API endpoints
+```
+**API endpoints**
 
 http://127.0.0.1:8005/health  
 http://127.0.0.1:8005/docs  
 
-Start Streamlit frontend
-
+**Start Streamlit frontend**
+```text
 streamlit run app/Home.py  
-
-Web interface
+```
+**Web interface**
 
 http://localhost:8501
 
