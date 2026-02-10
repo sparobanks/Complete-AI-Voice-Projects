@@ -6,13 +6,7 @@ Project 03 is a **Keyword Spotting (KWS) system** that detects short spoken comm
 
 Users can **record audio from a microphone** or **upload an audio file**, and the system predicts the spoken command with a confidence score.
 
-This project is **Project #3** in my **Voice AI Portfolio**, following:
-- Project 01 — Speech-to-Text  
-- Project 02 — Speaker Verification  
-
-----------------------------------------------------------------
-
-FEATURES
+## FEATURES
 
 - Short-command detection (keyword spotting)
 - Microphone recording or audio file upload
@@ -23,9 +17,7 @@ FEATURES
 - Lightweight CNN model
 - CPU-friendly (no GPU required)
 
-----------------------------------------------------------------
-
-PROBLEM
+## PROBLEM
 
 Voice assistants and smart devices rely on fast and accurate detection of short spoken commands.  
 However, many examples online:
@@ -35,9 +27,8 @@ However, many examples online:
 
 Keyword spotting is a **core building block** of voice-controlled systems, but is often poorly demonstrated.
 
-----------------------------------------------------------------
 
-SOLUTION
+## SOLUTION
 
 This project implements a **complete keyword spotting pipeline**:
 
@@ -48,9 +39,7 @@ This project implements a **complete keyword spotting pipeline**:
 
 The result is a **deployable voice-command recognition system**.
 
-----------------------------------------------------------------
-
-ARCHITECTURE
+## ARCHITECTURE
 
 User (Browser)  
 → Streamlit Frontend  
@@ -59,9 +48,7 @@ User (Browser)
 → CNN Keyword Spotting Model  
 → Predicted Command + Confidence
 
-----------------------------------------------------------------
-
-DATASET
+## DATASET
 
 Google Speech Commands Dataset (v0.02)
 
@@ -75,9 +62,7 @@ yes, no, up, down, left, right, stop, go
 Additional classes:
 unknown, silence
 
-----------------------------------------------------------------
-
-MODEL DESIGN
+## MODEL DESIGN
 
 - Input: 1-second audio clip
 - Features: MFCC (Mel-Frequency Cepstral Coefficients)
@@ -86,9 +71,7 @@ MODEL DESIGN
 
 This design balances **accuracy, speed, and simplicity**.
 
-----------------------------------------------------------------
-
-TECH STACK
+## TECH STACK
 
 Language: Python 3.10  
 Frontend: Streamlit  
@@ -99,66 +82,59 @@ Features: MFCC
 Dataset: Google Speech Commands  
 Runtime: CPU
 
-----------------------------------------------------------------
+## TRAIN THE MODEL
 
-TRAIN THE MODEL
+**Create environment** 
 
-Create environment
-
+```text
 conda create -n voice_lab python=3.10 -y  
 conda activate voice_lab  
-
-Install dependencies
-
+```
+**Install dependencies**
+```text
 pip install -r requirements.txt  
-
-Create data directory (important)
-
+```
+**Create data directory (important)**
+```text
 mkdir -p data  
-
-Train the model
-
+```
+**Train the model**
+```text
 python scripts/train.py  
-
+```
 After training, the following files are created:
 
 models/kws_model.pth  
 models/labels.json  
 
-----------------------------------------------------------------
-
-RUN THE APPLICATION
+## RUN THE APPLICATION
 
 Start FastAPI backend (port 8004)
-
+```text
 export KMP_DUPLICATE_LIB_OK=TRUE  
 python -m uvicorn api.main:app --host 127.0.0.1 --port 8004  
-
+```
 API endpoints
 
 http://127.0.0.1:8004/health  
 http://127.0.0.1:8004/docs  
 
-Start Streamlit frontend
-
+**Start Streamlit frontend**
+```text
 streamlit run app/Home.py  
-
-Web interface
+```
+**Web interface**
 
 http://localhost:8501
 
-----------------------------------------------------------------
-
-RESULTS
+## RESULTS
 
 - Accurate detection of short spoken commands
 - Fast inference suitable for real-time use
 - Clear confidence scores for predictions
 - Stable execution on macOS (Intel & Apple Silicon)
 
-----------------------------------------------------------------
-
-CURRENT LIMITATIONS
+## CURRENT LIMITATIONS
 
 - Fixed command vocabulary
 - Single-language (English)
@@ -166,9 +142,7 @@ CURRENT LIMITATIONS
 - No background noise augmentation
 - No deployment to edge devices
 
-----------------------------------------------------------------
-
-PLANNED IMPROVEMENTS
+## PLANNED IMPROVEMENTS
 
 - Add more keywords
 - Background noise robustness
@@ -176,17 +150,14 @@ PLANNED IMPROVEMENTS
 - On-device / edge deployment
 - Quantized models for low-power devices
 
-----------------------------------------------------------------
-
-AUTHOR
+## AUTHOR
 
 Jasper Chinedu Nwaangere
-MSc Computer Science  
+
 Voice AI • Machine Learning • Applied AI Systems
 
-----------------------------------------------------------------
 
-WHY THIS PROJECT MATTERS
+## WHY THIS PROJECT MATTERS
 
 This project demonstrates:
 - End-to-end voice command recognition
