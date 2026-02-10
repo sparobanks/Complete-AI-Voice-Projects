@@ -1,0 +1,17 @@
+fastapi
+uvicorn[standard]
+python-multipart
+pydantic
+
+streamlit
+requests
+
+pyannote.audio
+torch
+torchaudio
+
+numpy<2
+soundfile
+pydub
+ffmpeg-python
+pandas
