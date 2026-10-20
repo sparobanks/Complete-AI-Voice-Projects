@@ -152,7 +152,7 @@ http://localhost:8501
 
 ## AUTHOR
 
-Jasper Chinedu Nwaangere
+Jasper Chinedu Nwangere
 
 Voice AI • Machine Learning • Applied AI Systems
 
